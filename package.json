@@ -2,20 +2,12 @@
   "name": "test-devops-helloworld",
   "version": "1.0.0",
   "description": "A Hello World HTTP server",
+  "author": "ajit.s110389@gmail.com",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ajitsingh-doshaheen/hello-world/"
-  },
-  "keywords": [
-    "node",
-    "docker",
-    "dockerfile"
-  ],
-  "author": "ajit.s110389@gmail.com",
-  "license": "ISC"
+  "dependencies": {
+    "express": "^4.16.1"
+  }
 }
