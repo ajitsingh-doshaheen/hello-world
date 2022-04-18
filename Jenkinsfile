@@ -32,7 +32,8 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', '539255cb-7f48-450a-9bfa-6a6612f80925') {
             sh 'docker stop --time=1 /container-hello-world'
             sh 'docker rm /container-hello-world'
-            sh 'docker run -p 8000:8000 -d --name container-hello-world akumarsingh/hello-world'
+            //sh 'docker run -p 8000:8000 -d --name container-hello-world akumarsingh/hello-world'
+            sh 'docker run --name container-hello-world --rm --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --publish 8000:8000 akumarsingh/hello-world:latest'
             sh 'curl -i localhost:8000'
         }
     }
