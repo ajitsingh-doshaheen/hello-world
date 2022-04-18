@@ -30,7 +30,12 @@ node {
     /* To deploy the image in a container */
     /*
     stage('Deploy Image') {
-        docker run -p 49160:8080 -d <your username>/node-web-app   
+        //sh 'docker run -p 49160:8080 -d <your username>/node-web-app'
+        docker.withRegistry('https://registry.hub.docker.com', '539255cb-7f48-450a-9bfa-6a6612f80925') {
+            docker.image('akumarsingh/hello-world').withRun('-p 4040:8000') {
+                sh 'echo "Tests passed"' 
+            }
+        }
     }
     */
 }
