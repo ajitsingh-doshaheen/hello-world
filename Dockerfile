@@ -10,8 +10,9 @@ HEALTHCHECK --interval=5s \
 # Set working directory and install node
 WORKDIR /var/www
 COPY package.json /var/www/
-COPY main.js /var/www/
 RUN npm install
+COPY main.js /var/www/
+COPY . .
 
 # tell docker what port to expose
 EXPOSE 8000
