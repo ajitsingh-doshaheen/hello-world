@@ -34,6 +34,7 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', '539255cb-7f48-450a-9bfa-6a6612f80925') {
             docker.image('akumarsingh/hello-world').withRun('-p 4040:8000') {
                 sh 'echo "Tests passed"' 
+                sh "curl -i http://localhost:4040/"
             }
         }
     }
