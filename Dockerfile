@@ -1,3 +1,8 @@
+#FROM node:latest
+#WORKDIR /app
+#RUN npm install express
+#COPY app.js .
+#CMD ["node", "app.js"]
 
 # use a node base image
 FROM node:16
@@ -9,10 +14,10 @@ HEALTHCHECK --interval=5s \
 
 # Set working directory and install node
 WORKDIR /var/www
-COPY package.json /var/www/
-RUN npm install
-COPY main.js /var/www/
-COPY . .
+#COPY package.json /var/www/
+RUN npm install express
+COPY main.js .
+#COPY . .
 
 # tell docker what port to expose
 EXPOSE 8000
