@@ -34,7 +34,7 @@ node {
             //sh 'docker rm /container-hello-world'
             sh 'docker run -p 8000:8000 -d --name container-hello-world akumarsingh/hello-world'
             //sh 'docker run --name container-hello-world --rm --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --publish 8000:8000 akumarsingh/hello-world:latest'
-            sh 'curl -i localhost:8000'
+            //sh 'curl -i localhost:8000'
         }
     }
 }
