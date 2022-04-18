@@ -13,5 +13,5 @@ app.get('/', (request, response) => {
 });
 
 #app.listen(PORT, HOST);
-server.listen(8000);
+app.listen(8000);
 console.log('Running on http://${HOST}:${PORT}');
