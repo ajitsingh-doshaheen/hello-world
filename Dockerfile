@@ -1,6 +1,9 @@
 # use a node base image
 FROM node:16
 
+# install curl
+RUN apt-get update && apt-get install -y curl
+
 # set a health check
 HEALTHCHECK --interval=5s \
             --timeout=5s \
