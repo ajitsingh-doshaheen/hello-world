@@ -30,6 +30,7 @@ node {
     /* To deploy the image in a container */
     stage('Deploy Image') {
         docker.withRegistry('https://registry.hub.docker.com', '539255cb-7f48-450a-9bfa-6a6612f80925') {
+            sh 'docker rm /container-hello-world'
             sh 'docker run -p 8000:8000 -d --name container-hello-world akumarsingh/hello-world'
             sh 'curl -i localhost:8000'
         }
